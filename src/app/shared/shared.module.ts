@@ -3,6 +3,11 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 
+import { RouterModule } from '@angular/router';
+import {HttpClientModule} from '@angular/common/http'
+import { BrowserModule } from '@angular/platform-browser';
+import { ProductsModule } from '../products/products.module';
+
 
 
 @NgModule({
@@ -11,7 +16,11 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     SpinnerComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+ RouterModule,
+ HttpClientModule,
+ BrowserModule,
+ ProductsModule
   ],
   exports:[
   HeaderComponent  
