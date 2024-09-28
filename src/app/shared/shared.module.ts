@@ -12,6 +12,9 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports:[
+  HeaderComponent  
   ]
 })
 export class SharedModule { }
