@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PeoductService } from '../../services/peoduct.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-all-products',
@@ -11,7 +12,7 @@ export class AllProductsComponent implements OnInit {
   products:any[]=[]
   categories:any[]=[]
 
-  constructor(private services:PeoductService)
+  constructor(private services:PeoductService, private spinner:NgxSpinnerService)
   {
 
   }
@@ -22,9 +23,11 @@ export class AllProductsComponent implements OnInit {
   }
   getAllProducts()
   {
+    this.spinner.show();
     this.services.getAllProducts().subscribe((res:any)=>
       {
         this.products=res
+        this.spinner.hide();
       },err=>
         {
           alert(err);
